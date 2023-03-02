@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const mode = process.env.NODE_ENV || 'development';
 const devMode = mode === 'development'
@@ -15,7 +16,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         clean: true,
-        filename: 'index.[contenthash].js'
+        filename: 'index.[contenthash].js',
+        assetModuleFilename: 'assets/[name][ext]'
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -23,7 +25,12 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: 'style.[contenthash].css'
-        })
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+              { from: './src/assets', to: 'assets' },
+            ],
+        }),
     ],
     module: {
         rules: [
@@ -58,7 +65,7 @@ module.exports = {
                 test: /\.(jpe?g|png|webp|gif|svg)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'img/[name][ext]'
+                    filename: 'assets/img/[name][ext]'
                 },
             },
             {

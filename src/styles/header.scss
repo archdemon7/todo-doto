@@ -1,18 +1,40 @@
 .header {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    align-items: center;
+    max-width: 100%;
     background-color: aquamarine;
+    padding: 0 40px;
 }
 
 .logo {
-    
+    max-width: 50px;
+}
+
+.logo-image {
+    width: 100%;
 }
 
 .title {
 
 }
 
-.date {
+.title-text {
+    text-transform: uppercase;
+}
 
+.date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-date {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.date-time {
+    font-size: 24px;
 }

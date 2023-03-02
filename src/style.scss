@@ -1,1 +1,11 @@
-@import './styles/header.scss'
+@import './styles/header.scss';
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+}
