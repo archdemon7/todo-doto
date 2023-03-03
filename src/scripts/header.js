@@ -9,9 +9,13 @@ class Header {
         header.classList.add('header');
         this.container.append(header);
 
+        const container = document.createElement('div')
+        container.classList.add('container', 'header-container');
+        header.append(container);
+
         const logo = document.createElement('div');
         logo.classList.add('logo');
-        header.append(logo);
+        container.append(logo);
         const image = document.createElement('img');
         image.setAttribute('src', './assets/img/logo.png');
         image.setAttribute('alt', 'logo');
@@ -20,15 +24,29 @@ class Header {
 
         const title = document.createElement('div');
         title.classList.add('title');
-        header.append(title);
-        const titleText = document.createElement('h1');
+        container.append(title);
+        const titleText = document.createElement('div');
         titleText.classList.add('title-text');
-        titleText.textContent = 'your doto list'
         title.append(titleText);
+        const titleApp = 'YOUR TODO LIST'.split('');
+        titleApp.forEach(e => {
+            if (e == ' ') {
+                const letter = document.createElement('pre');
+                letter.textContent = ' ';
+                titleText.append(letter);
+            } else {
+                const letter = document.createElement('p');
+                letter.classList.add('title-letter');
+                letter.textContent = e;
+                titleText.append(letter);
+            }
+        })
+
+
 
         const date = document.createElement('div');
         date.classList.add('date');
-        header.append(date);
+        container.append(date);
         const dateDate = document.createElement('p');
         dateDate.classList.add('date-date');
         date.append(dateDate);
