@@ -19,7 +19,7 @@ class Header {
         const image = document.createElement('img');
         image.setAttribute('src', './assets/img/logo.png');
         image.setAttribute('alt', 'logo');
-        image.setAttribute('class', 'logo-image')
+        image.setAttribute('class', 'logo-image');
         logo.append(image);
 
         const title = document.createElement('div');
@@ -41,9 +41,6 @@ class Header {
                 titleText.append(letter);
             }
         })
-
-
-
         const date = document.createElement('div');
         date.classList.add('date');
         container.append(date);

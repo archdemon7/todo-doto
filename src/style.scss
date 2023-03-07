@@ -1,4 +1,6 @@
+@import './styles/fonts.scss';
 @import './styles/header.scss';
+@import './styles/main.scss';
 
 
 * {
@@ -7,7 +9,9 @@
 }
 
 body {
-    background-color: black;
+    font-family: 'Sarabun';
+    background: rgb(251,94,55);
+    background: linear-gradient(90deg, rgba(251,94,55,1) 0%, rgba(236,141,133,1) 43%, rgba(0,212,255,1) 100%);
 }
 
 .container {
